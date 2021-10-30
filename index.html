@@ -21,7 +21,7 @@
 
     <div class="alert-box" id="alert">
       <p>alert 박스</p>
-      <button onclick="document.getElementById('alert').style.display = 'none'; ">닫기</button>
+      <button onclick="alertClose()">닫기</button>
     </div>
     <button onclick="alertOpen()">버튼</button>
 
@@ -44,7 +44,6 @@
       function alertOpen() {
         document.getElementById("alert").style.display = "block";
       }
-
       //초보떄 자주 겪는 흔한 버그
       // document.getElementById('alert').innerHTML = "???";
       //변경할 HTML 요소는 위에 JS 조작은 밑에서(정석)
@@ -54,6 +53,10 @@
       // is not a function --- 대부분 오타
 
       // 숙제 : 닫기버튼에 적은 코드 짧게 function으로 축약하기
+
+      function alertClose() {
+        document.getElementById("alert").style.display = "none";
+      }
     </script>
   </body>
 </html>
