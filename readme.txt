@@ -5,7 +5,7 @@ control ?  -주석처리
 10/30/2021
 -------------------------------------------------
 ctrl + n -새로운 탭? 열기
-ctrl + shift + e - explorer 열기
+ctrl + shift + e - explorer 열기 // 파일 탐색기 여는 거임
 tab -들여쓰기, shift + tab -내어쓰기
 alt + 위아래 화살표 - 라인 이동
 ctrl + x - 현재 라인 잘라내기
