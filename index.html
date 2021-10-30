@@ -20,12 +20,23 @@
     <!--<button onclick="document.getElementById('alert').style.display = 'none'; ">닫기</button> -->
 
     <div class="alert-box" id="alert">
-      <p>alert 박스</p>
-      <button onclick="alertClose()">닫기</button>
+      <p id="title">alert 박스</p>
+      <button id="close">X</button>
+      <!-- <button onclick="alertOpen('none')">닫기</button> -->
     </div>
-    <button onclick="alertOpen()">버튼</button>
+    <button onclick="alertOpen('block', 'alert')">버튼</button>
+
+    <!-- 숙제 -->
+    <button onclick="alertOpen('아이디를 입력 안하셨어요')">버튼1</button>
+    <button onclick="alertOpen('비번을 입력 안하셨어요')">버튼2</button>
 
     <script>
+      //EventListener
+      //------------------------------/ -이만큼이 셀렉터(종류 다양)
+      document.getElementById("close").addEventListener("click", function () {
+        document.getElementById("alert").style.display = "none";
+      });
+
       document.getElementById("hello").innerHTML = "안녕";
       // 문법 외워서 이해하기
       //document.getElementById('???').???? = "???";
@@ -41,9 +52,27 @@
       //        이 안에 중괄호 안에 긴 코드를 넣음
       //   }
 
-      function alertOpen() {
+      //숙제
+      function alertOpen(hole) {
+        document.getElementById("title").innerHTML = hole;
         document.getElementById("alert").style.display = "block";
       }
+
+      //애플코딩
+      //.getElementByclassName(변수명)[번지수] -- 왜냐면 같은 변수명을 가진 클래스를 전부 다 찾아주기 때문
+
+      /* 
+      1. 제목바꾸기
+      function 알림창1열기(){
+      document.getElementById("p태그에 아이디 부여하고 그 변수명적기").innerHTML = '아이디를 입력하세요';
+      2. 열기
+      document.getElementById("alert").style.display = 'block'
+      }
+      */
+
+      //함수하나로 다양한 기능  만들기 가능 (구멍-가변적인...)
+      // **** 알림창 닫기 버튼 기능 지워도 실행됨
+
       //초보떄 자주 겪는 흔한 버그
       // document.getElementById('alert').innerHTML = "???";
       //변경할 HTML 요소는 위에 JS 조작은 밑에서(정석)
@@ -54,9 +83,29 @@
 
       // 숙제 : 닫기버튼에 적은 코드 짧게 function으로 축약하기
 
-      function alertClose() {
-        document.getElementById("alert").style.display = "none";
-      }
+      // ****  function alertClose() {
+      // ****    document.getElementById("alert").style.display = "none";
+      // ****  }
+
+      //파라미터 문법(function 업그레이드)
+
+      //   //     <예시>
+      //   function plus(hole){
+      //       2 + hole
+      //   }
+
+      //   plus(1); //   2 + 1 실행
+
+      // 구멍이 여러개 필요한 경우 ---- 구멍을 여러개 뚫으면 됨
+      // function ex(hole, hole2, .....){
+      //    document.getElementById("hole").style.display = hole;
+      // }
+      // ex('0000', 'sdkjgfhak');
+      //argument, 인자, 파라미터 임**
+
+      //숙제 ------ alert 창 2개 만들기
+      // 1. 아이디를 입력 안하셨어요  --누르면 (내부글자를 바꿔서 띄워주기 p태크 안의 내용 바꾸기)
+      // 2. 비번을 입력 안하셨어요  --누르면
     </script>
   </body>
 </html>
