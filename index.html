@@ -9,23 +9,21 @@
 
   <body>
     <h2 id="hello">안녕하세요</h2>
-    <h2 id="hi">올떄 메로나</h2>
+    <h2 id="hi">올때 메로나</h2>
 
-    <!-- 내가 푼 것
-    <div class="alert-box" id="alert">Alert 박스</div>
+    <!-- 내가 푼 것-->
+    <!--<div class="alert-box" id="alert">Alert 박스</div>-->
     <!-- 모달, Alert, 탭, 툴팁, 서브메뉴, 경고문 등 다 같은 방식으로 만들면 됨 -->
-
-    <button onclick="document.getElementById('alert').style.display ='block'; ">버튼</button>
+    <!--<button onclick="document.getElementById('alert').style.display ='block'; ">버튼</button>-->
     <!-- onclick" 이안에 있는 자바스크립트 실행해주삼" -->
-
     <!-- 닫기버튼 만들기 -->
-    <button onclick="document.getElementById('alert').style.display = 'none'; ">닫기</button> -->
+    <!--<button onclick="document.getElementById('alert').style.display = 'none'; ">닫기</button> -->
 
     <div class="alert-box" id="alert">
       <p>alert 박스</p>
       <button onclick="document.getElementById('alert').style.display = 'none'; ">닫기</button>
     </div>
-    <button onclick="document.getElementById('alert').style.display ='block'; ">버튼</button>
+    <button onclick="alertOpen()">버튼</button>
 
     <script>
       document.getElementById("hello").innerHTML = "안녕";
@@ -37,6 +35,25 @@
 
       // id hello 글자 사이즈 30px로 바꾸기
       document.getElementById("hello").style.fontSize = "30px";
+
+      //   function 아무렇게나 작명(){
+      //        긴 코드를 깔끔하게 한 단어로 축약 가능
+      //        이 안에 중괄호 안에 긴 코드를 넣음
+      //   }
+
+      function alertOpen() {
+        document.getElementById("alert").style.display = "block";
+      }
+
+      //초보떄 자주 겪는 흔한 버그
+      // document.getElementById('alert').innerHTML = "???";
+      //변경할 HTML 요소는 위에 JS 조작은 밑에서(정석)
+      //JS조작을 위에서하면 에러가 남 (검사는 브라우저에서 우클릭해서 검사 버튼 누르기/ 개발자도구열림)
+      // 이유 : HTML을 먼저 읽어야 JS로 조작이 가능
+      // 에러메세지 ~~~~ of null 요소를 못찾은 에러
+      // is not a function --- 대부분 오타
+
+      // 숙제 : 닫기버튼에 적은 코드 짧게 function으로 축약하기
     </script>
   </body>
 </html>
